@@ -9,5 +9,5 @@ import com.unifil.advogacia.gerenciador.cliente.model.Cliente;
 
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, UUID>{
-    
+    public Boolean existsByDocumento(String documento);
 }

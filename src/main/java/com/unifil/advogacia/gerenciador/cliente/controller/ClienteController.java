@@ -1,5 +1,7 @@
 package com.unifil.advogacia.gerenciador.cliente.controller;
 
+import com.unifil.advogacia.gerenciador.cliente.dto.PostCliente;
+import com.unifil.advogacia.gerenciador.cliente.dto.PutCliente;
 import com.unifil.advogacia.gerenciador.cliente.model.Cliente;
 import com.unifil.advogacia.gerenciador.cliente.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +20,8 @@ public class ClienteController {
     private ClienteService clienteService;
 
     @PostMapping
-    public ResponseEntity<Cliente> salvarCliente(@RequestBody Cliente cliente) {
-        Cliente clienteSalvo = clienteService.salvarCliente(cliente);
+    public ResponseEntity<Cliente> salvarCliente(@RequestBody PostCliente dto) {
+        Cliente clienteSalvo = clienteService.salvarCliente(dto);
         return new ResponseEntity<>(clienteSalvo, HttpStatus.CREATED);
     }
 
@@ -36,9 +38,8 @@ public class ClienteController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Cliente> atualizarCliente(@PathVariable UUID id, @RequestBody Cliente cliente) {
-        cliente.setId(id);
-        Cliente clienteAtualizado = clienteService.atualizarCliente(cliente);
+    public ResponseEntity<Cliente> atualizarCliente(@PathVariable UUID id, @RequestBody PutCliente dto) {
+        Cliente clienteAtualizado = clienteService.atualizarCliente(id, dto);
         return new ResponseEntity<>(clienteAtualizado, HttpStatus.OK);
     }
 
