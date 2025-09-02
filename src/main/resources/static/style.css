@@ -1,0 +1,33 @@
+
+html, body{
+    background-color: var(--cor-background);
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    display: block;
+    height: 100dvh;
+    width: 100dvw;
+}
+
+:root {
+    --cor-primaria: #3B82F6;
+    --hover-primaria: #2563EB; 
+    --cor-secundaria: #111827; 
+    --cor-background: #f5f5f5; 
+    --card-background: #FFFFFF; 
+    --cor-sucesso: #10B981; 
+    --cor-erro: #EF4444;
+    font-size: 16px;
+    --rem: 1rem; 
+}
+    
+.card{
+    background-color: var(--card-background);
+    border-radius: 1rem;
+    box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
